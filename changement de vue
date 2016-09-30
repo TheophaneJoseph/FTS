@@ -1,0 +1,38 @@
+using UnityEngine;
+using System.Collections;
+
+public class NewBehaviourScript : MonoBehaviour {
+
+     Camera FPScamera;
+     Camera TPScamera;
+
+        private bool SwitchCamera = false;
+    
+
+	// Use this for initialization
+	void Start () {
+        FPScamera.enabled = true;
+        TPScamera.enabled = false;
+
+
+    }
+
+    // Update is called once per frame
+    void Update () {
+        if(Input.GetKeyDown("n"))
+        {
+            SwitchCamera = !SwitchCamera;
+        }
+        if(SwitchCamera == true)
+        {
+            FPScamera.enabled = false;
+            TPScamera.enabled = true;
+        }
+        else
+        {
+            FPScamera.enabled = true;
+            TPScamera.enabled = false;
+        }
+	
+	}
+}
